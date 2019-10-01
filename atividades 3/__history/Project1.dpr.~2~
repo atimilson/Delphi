@@ -1,0 +1,19 @@
+program Project1;
+
+uses
+  Vcl.Forms,
+  Principal in 'Principal.pas' {FPrincipal},
+  Cliente in 'Cliente.pas' {FCliente},
+  ClassCliente in 'ClassCliente.pas',
+  PAIMDIFILHO in 'PAIMDIFILHO.pas' {FPAIMDIFILHO},
+  ParametrosConexao in 'ParametrosConexao.pas',
+  db in 'db.pas' {dmBanco: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFPrincipal, FPrincipal);
+  Application.Run;
+end.

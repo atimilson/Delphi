@@ -1,0 +1,18 @@
+program ListaObjetos;
+
+uses
+  Vcl.Forms,
+  painelVendas in '..\exemplo_object_list\painelVendas.pas' {Form1},
+  uItemVendas in '..\exemplo_object_list\uItemVendas.pas',
+  uVendas in '..\exemplo_object_list\uVendas.pas',
+  Principal in 'Principal.pas' {Form2};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmVendas, frmVendas);
+  Application.CreateForm(TForm2, Form2);
+  Application.Run;
+end.

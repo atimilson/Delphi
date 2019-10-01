@@ -1,0 +1,12 @@
+unit Comum;
+
+interface
+
+
+var
+PassagemParametro:integer;
+
+implementation
+
+
+end.

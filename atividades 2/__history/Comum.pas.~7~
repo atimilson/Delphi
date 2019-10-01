@@ -1,0 +1,12 @@
+unit Comum;
+
+interface
+
+
+var
+ParametroIdUser:integer;
+ParametroNomeUser:String;
+implementation
+
+
+end.

@@ -1,0 +1,18 @@
+program Poo;
+
+uses
+  Vcl.Forms,
+  Principal in '..\Exemplo_lista_de_Objetos\Principal.pas' {frmCadastroCliente},
+  Cliente in '..\Exemplo_lista_de_Objetos\Cliente.pas',
+  ListaCliente in '..\Exemplo_lista_de_Objetos\ListaCliente.pas',
+  frmPrincipal in 'frmPrincipal.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmCadastroCliente, frmCadastroCliente);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

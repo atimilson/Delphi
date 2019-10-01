@@ -1,0 +1,27 @@
+program Project1;
+
+uses
+  Vcl.Forms,
+  Principal in '..\atividades 3\Principal.pas' {FPrincipal},
+  Cliente in '..\atividades 3\Cliente.pas' {FCliente},
+  ClassCliente in '..\atividades 3\ClassCliente.pas',
+  PAIMDIFILHO in '..\atividades 3\PAIMDIFILHO.pas' {FPAIMDIFILHO},
+  ParametrosConexao in '..\atividades 3\ParametrosConexao.pas',
+  dmBanco in '..\atividades 3\dmBanco.pas' {FdmBanco: TDataModule},
+  Cliente2 in '..\atividades 3\Cliente2.pas' {FclienteSegundo},
+  ListarClientes in '..\atividades 3\ListarClientes.pas' {FListarClientes},
+  ExemploColecao in '..\atividades 3\ExemploColecao.pas' {FColecao},
+  uVenda in '..\atividades 3\uVenda.pas',
+  ExemploColecaoItem in '..\atividades 3\ExemploColecaoItem.pas',
+  painelVendas in 'painelVendas.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFPrincipal, FPrincipal);
+  Application.CreateForm(TFdmBanco, FdmBanco);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

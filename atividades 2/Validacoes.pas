@@ -1,0 +1,57 @@
+unit Validacoes;
+
+interface
+
+
+function SoLetras(const FValue: string):string;
+function SoNumeros(const FValue: string):string;
+
+
+implementation
+
+uses
+  System.SysUtils;
+
+
+function SoNumeros(const FValue: string): string;
+var
+   I : integer;
+   texto :string;
+begin
+   if (Length(FValue) > 0) then
+   begin
+      texto := '';
+      for I := 0 to Length(FValue) do
+      begin
+         if ((Ord(FValue[I]) > 47) and (Ord(FValue[I]) <= 57)) then
+         //if(FValue[I] in ['0'..'9'])then
+            texto := texto + FValue[I];
+
+      end;
+      Result := texto;
+   end;
+end;
+
+
+
+function SoLetras(const FValue:string): string;
+var
+   I : integer;
+   texto :string;
+begin
+   if (Length(FValue) > 0) then
+   begin
+      texto := '';
+      for I := 0 to Length(FValue) do
+      begin
+         if (Ord(UpperCase(FValue)[I]) > 64) and (Ord(UpperCase(FValue)[I]) <= 90) then
+   //      if(FValue[I] in ['A'..'Z','a'..'z'])then
+   //      if(UpperCase(FValue)[I] in ['A'..'Z'])then
+            texto := texto + FValue[I];
+      end;
+      Result := texto;
+   end;
+end;
+
+
+end.

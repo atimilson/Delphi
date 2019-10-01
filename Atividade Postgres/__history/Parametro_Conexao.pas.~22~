@@ -1,0 +1,61 @@
+unit Parametro_Conexao;
+
+interface
+
+uses dtModule;
+
+function ConfiguraBanco(const conexao:Integer):boolean;
+
+implementation
+
+uses
+  System.SysUtils, System.IniFiles, uADCompClient;
+
+
+
+function ConfiguraBanco(const conexao:Integer):boolean;
+var
+   arquivoIni : TIniFile;
+   dtm : TDataModule1;
+begin
+   dtm := dtModule.DataModule1.ADConnection.Create;
+   if (FileExists('C:\configuracao\parametros.ini')) then
+   begin
+      arquivoIni := TIniFile.Create('C:\configuracao\parametros.ini');
+      case conexao of
+
+         1:begin
+              dtModule.DataModule1.ADConnection.DriverName := 'ASA';
+              dtModule.DataModule1.ADConnection.Params.Add('User_Name ='+ArquivoINI.ReadString('sybase', 'User_Name', 'Erro ao ler o valor'));
+              dtModule.DataModule1.ADConnection.Params.Add('Password ='+ArquivoINI.ReadString('sybase', 'Password', 'Erro ao ler o valor'));
+              dtModule.DataModule1.ADConnection.Params.Add('Server ='+ArquivoINI.ReadString('sybase', 'Server', 'Erro ao ler o valor'));
+              dtModule.DataModule1.ADConnection.Params.Add('Password ='+ArquivoINI.ReadString('sybase', 'Password', 'Erro ao ler o valor'));
+              dtModule.DataModule1.ADConnection.Params.Add('DriverID ='+ArquivoINI.ReadString('sybase', 'DriverID', 'Erro ao ler o valor'));
+
+              if (dtModule.DataModule1.ADConnection.Connected = true) then
+              begin
+                 ArquivoINI.Free;
+                 Result := True;
+              end
+              else
+              begin
+                 dtModule.DataModule1.ADConnection.DriverName := 'PG';
+                 dtModule.DataModule1.ADConnection.Params.Add('User_Name ='+ArquivoINI.ReadString('sybase', 'User_Name', 'Erro ao ler o valor'));
+                 dtModule.DataModule1.ADConnection.Params.Add('Password ='+ArquivoINI.ReadString('sybase', 'Password', 'Erro ao ler o valor'));
+                 dtModule.DataModule1.ADConnection.Params.Add('Server ='+ArquivoINI.ReadString('sybase', 'Server', 'Erro ao ler o valor'));
+                 dtModule.DataModule1.ADConnection.Params.Add('Password ='+ArquivoINI.ReadString('sybase', 'Password', 'Erro ao ler o valor'));
+                 dtModule.DataModule1.ADConnection.Params.Add('DriverID ='+ArquivoINI.ReadString('sybase', 'DriverID', 'Erro ao ler o valor'));
+
+                 dtModule.DataModule1.ADConnection.Connected := true;
+                 ArquivoINI.Free;
+                 Result := True;
+              end;
+
+         end;
+
+      end;
+   end
+
+end;
+
+end.

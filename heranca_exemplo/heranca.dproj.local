@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/07/31 15:20:01.000.204,=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/09/25 14:58:42.168,=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2019/09/25 14:59:25.936,C:\Users\atimilson\Desktop\Projetos\heranca_exemplo\medico.dfm=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit3.dfm</Transaction>
+    <Transaction>2019/09/25 14:59:25.936,C:\Users\atimilson\Desktop\Projetos\heranca_exemplo\medico.pas=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2019/09/25 14:59:33.934,C:\Users\atimilson\Desktop\Projetos\heranca_exemplo\heranca.dproj=C:\Users\atimilson\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2019/09/25 14:59:43.021,=C:\Users\atimilson\Desktop\Projetos\heranca_exemplo\Unit1.pas</Transaction>
+    <Transaction>2019/09/25 15:00:03.705,C:\Users\atimilson\Desktop\Projetos\heranca_exemplo\Pessoa.pas=C:\Users\atimilson\Desktop\Projetos\heranca_exemplo\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

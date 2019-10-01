@@ -1,0 +1,13 @@
+unit Param;
+
+interface
+
+uses Cliente, Principal;
+
+type
+function GeraId:integer;
+
+
+implementation
+
+end.

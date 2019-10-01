@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/05/27 09:42:35.000.322,=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/05/27 09:43:28.000.070,C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\atimilson\Desktop\Projetos\Atividade Postgres\segundo.dfm</Transaction>
+    <Transaction>2019/05/27 09:43:28.000.070,C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\atimilson\Desktop\Projetos\Atividade Postgres\segundo.pas</Transaction>
+    <Transaction>2019/05/27 09:43:42.000.456,C:\Users\atimilson\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\atimilson\Desktop\Projetos\Atividade Postgres\ExercicioPostgres.dproj</Transaction>
+    <Transaction>2019/05/27 09:44:04.000.713,=C:\Users\atimilson\Desktop\Projetos\Atividade Postgres\dtModule.pas</Transaction>
+    <Transaction>2019/05/27 09:44:43.000.859,=C:\Users\atimilson\Desktop\Projetos\Atividade Postgres\Principal.pas</Transaction>
+    <Transaction>2019/05/27 10:30:57.849,C:\Users\atimilson\Desktop\Projetos\Atividade Postgres\segundo.pas=</Transaction>
+    <Transaction>2019/05/27 10:34:57.670,=C:\Users\atimilson\Desktop\Projetos\Atividade Postgres\Unit2.pas</Transaction>
+    <Transaction>2019/05/27 10:35:34.764,C:\Users\atimilson\Desktop\Projetos\Atividade Postgres\Cliente.dfm=C:\Users\atimilson\Desktop\Projetos\Atividade Postgres\Unit2.dfm</Transaction>
+    <Transaction>2019/05/27 10:35:34.764,C:\Users\atimilson\Desktop\Projetos\Atividade Postgres\Cliente.pas=C:\Users\atimilson\Desktop\Projetos\Atividade Postgres\Unit2.pas</Transaction>
+    <Transaction>2019/05/27 10:53:46.563,=C:\Users\atimilson\Desktop\Projetos\Atividade Postgres\Unit1.pas</Transaction>
+    <Transaction>2019/05/27 11:01:16.908,C:\Users\atimilson\Desktop\Projetos\Atividade Postgres\ClassDados.pas=C:\Users\atimilson\Desktop\Projetos\Atividade Postgres\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,38 @@
+unit medico;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Pessoa;
+
+type
+  TForm3 = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+  Tmedico = class(Tpessoas)
+   private
+   FnumCrc :string;
+   public
+   property numCrc :string read FnumCrc write FnumCrc;
+   procedure realizarConsulta;
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.dfm}
+
+{ Tmedico }
+
+procedure Tmedico.realizarConsulta;
+begin
+// realiza consulta
+end;
+
+end.

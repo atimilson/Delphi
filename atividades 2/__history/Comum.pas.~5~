@@ -1,0 +1,11 @@
+unit Comum;
+
+interface
+
+var
+PassagemParametro:String;
+
+implementation
+
+
+end.

@@ -1,0 +1,81 @@
+unit Principal;
+
+interface
+
+uses
+  Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Cliente, Data.DB, Vcl.Grids,
+  Vcl.DBGrids, Vcl.StdCtrls, Bde.DBTables, dmBanco, Cliente2;
+
+type
+  TFPrincipal = class(TForm)
+
+    MainMenu1: TMainMenu;
+    Cadastros1: TMenuItem;
+    menuUsuarios: TMenuItem;
+    menuCliente: TMenuItem;
+    Query1: TQuery;
+    Button1: TButton;
+    DataSource1: TDataSource;
+    Database1: TDatabase;
+    ClienteSegundo1: TMenuItem;
+    procedure menuClienteClick(Sender: TObject);
+    procedure ClienteSegundo1Click(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FPrincipal: TFPrincipal;
+  formCliente : TFCliente;
+  banco : TFdmBanco;
+  formClente2 : TFclienteSegundo;
+
+implementation
+
+uses
+  Winapi.Windows;
+
+{$R *.dfm}
+
+procedure TFPrincipal.ClienteSegundo1Click(Sender: TObject);
+begin
+   if not((Assigned(formClente2)) and (Assigned(formClente2.edtNomeCliente)))then
+   begin
+      formClente2 := TFclienteSegundo.Create(Self);
+
+
+   end
+   else
+      formClente2.WindowState:= wsNormal;
+
+end;
+
+procedure TFPrincipal.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+   if (Ord(Key) = VK_F9) then
+
+   if not((Assigned(formCliente)) and (Assigned(formCliente.edtNomeCliente)))then
+   begin
+      formCliente := TFCliente.Create(Self);
+   end
+   else
+      formCliente.WindowState:= wsNormal;
+
+end;
+
+procedure TFPrincipal.menuClienteClick(Sender: TObject);
+begin
+   if not((Assigned(formCliente)) and (Assigned(formCliente.edtNomeCliente)))then
+   begin
+      formCliente := TFCliente.Create(Self);
+   end
+   else
+      formCliente.WindowState:= wsNormal;
+end;
+
+end.

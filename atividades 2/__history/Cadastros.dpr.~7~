@@ -1,0 +1,19 @@
+program Cadastros;
+
+uses
+  Vcl.Forms,
+  SistemaCadastro in 'SistemaCadastro.pas' {Form1},
+  usuarios in 'usuarios.pas' {Form2},
+  PAIMDICHILD in 'PAIMDICHILD.pas' {FPAIMDICHILD},
+  Login in 'Login.pas' {TFLogin},
+  Clientes in 'Clientes.pas' {TFClientes},
+  Comum in 'Comum.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

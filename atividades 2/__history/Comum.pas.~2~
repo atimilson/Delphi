@@ -1,0 +1,9 @@
+unit Comum;
+
+interface
+
+implementation
+var
+teste:String;
+
+end.

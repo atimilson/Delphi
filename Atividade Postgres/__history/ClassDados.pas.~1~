@@ -1,0 +1,41 @@
+unit ClassDados;
+
+interface
+
+type
+   TDados = class
+   private
+      FId            : integer;
+      FNome          : string;
+      FSexo          : string;
+      FRg            : string;
+      FCpf           : string;
+      FEmail         : string;
+      FNascimento    : string;
+      FCidade        : string;
+      FTelefone      : string;
+      FRua           : string;
+      FNumero        : string;
+    function GetId: integer;
+    procedure SetId(const Value: integer);
+
+   public
+         property Id:integer read GetId write SetId;
+
+   end;
+
+implementation
+
+{ TDados }
+
+function TDados.GetId: integer;
+begin
+
+end;
+
+procedure TDados.SetId(const Value: integer);
+begin
+
+end;
+
+end.

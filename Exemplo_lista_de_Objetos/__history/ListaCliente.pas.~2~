@@ -1,0 +1,19 @@
+unit ListaCliente;
+
+interface
+   uses Classes, Cliente;
+   type
+      TListaCliente = class
+      private
+         FListaClientes : TList;
+      public
+        { public declarations }
+        constructor Create;
+        procedure Adicionar(pCliente: TCliente);
+        procedure Remover(Index: Integer);
+        function Count: Integer;
+      end;
+
+implementation
+
+end.

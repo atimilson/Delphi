@@ -1,0 +1,223 @@
+unit SistemaCadastro;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, usuarios, Data.DB,
+  Datasnap.DBClient, Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ComCtrls, Login,
+  Clientes, Comum, Correios, ListaUsuarioEClientes;
+
+type
+  TForm1 = class(TForm)
+    MainMenuPrincipal: TMainMenu;
+    C1: TMenuItem;
+    Usuarios1: TMenuItem;
+    DataSourceUsuario: TDataSource;
+    ClientDataSetUsuario: TClientDataSet;
+    ClientDataSetUsuarioLogin: TStringField;
+    ClientDataSetUsuarioSenha: TStringField;
+    ClientDataSetUsuarioSetor: TIntegerField;
+    ClientDataSetUsuarioPermissao: TIntegerField;
+    Salvar1: TMenuItem;
+    StatusBar1: TStatusBar;
+    ClientDataSetUsuarioid: TIntegerField;
+    Cliente1: TMenuItem;
+    DataSourceCliente: TDataSource;
+    ClientDataSetCliente: TClientDataSet;
+    ClientDataSetClienteNome: TStringField;
+    ClientDataSetClienteid: TIntegerField;
+    ClientDataSetClientesexo: TIntegerField;
+    ClientDataSetClienteRG: TStringField;
+    ClientDataSetClienteCPF: TStringField;
+    ClientDataSetClienteEmail: TStringField;
+    ClientDataSetClienteCidade: TStringField;
+    ClientDataSetClienteUf: TStringField;
+    ClientDataSetClienteTelefone: TStringField;
+    ClientDataSetClienteRua: TStringField;
+    ClientDataSetClienteComplemento: TStringField;
+    ClientDataSetClienteBairro: TStringField;
+    ClientDataSetClienteUsuario: TIntegerField;
+    ClientDataSetClienteNascimento: TStringField;
+    CEP1: TMenuItem;
+    ClientDataSetClienteNumero: TStringField;
+    ListarUsuarioseclientes: TMenuItem;
+    procedure Usuarios1Click(Sender: TObject);
+    procedure Salvar1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Cliente1Click(Sender: TObject);
+    procedure CEP1Click(Sender: TObject);
+    procedure FormMouseEnter(Sender: TObject);
+    procedure ListarUsuarioseclientesClick(Sender: TObject);
+
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+
+  end;
+
+var
+  Form1: TForm1;
+  formUsuarios : TForm2;
+  usuario : string;
+  formCliente : TFClientes;
+  formListaUsuarioCliente : TFUsuariosClientes;
+
+implementation
+
+{$R *.dfm}
+
+
+
+
+
+
+
+procedure TForm1.FormCreate(Sender: TObject);
+var
+   teste : boolean;
+   form3 : TTFLogin;
+begin
+
+   ClientDataSetUsuario.CreateDataSet;
+   ClientDataSetCliente.CreateDataSet;
+
+
+
+   if(FileExists(ExtractFilePath(ParamStr(0))+'clientes.xml'))then
+   begin
+      ClientDataSetCliente.LoadFromFile(ExtractFilePath(ParamStr(0))+'clientes.xml');   // carrega o xml   no client
+   end;
+
+   if(FileExists(ExtractFilePath(ParamStr(0))+'usuarios.xml'))then
+   begin
+      ClientDataSetUsuario.LoadFromFile(ExtractFilePath(ParamStr(0))+'usuarios.xml');  // carrega o xml   no client
+   end;
+
+   StatusBar1.Panels[0].Text := 'Usuario:';
+ //  ShowMessage(IntToStr(ClientDataSetUsuario.RecordCount));
+   if (ClientDataSetUsuario.RecordCount > 0) then
+   begin
+      form3:= TTFLogin.Create(Self);
+      ClientDataSetUsuario.First;
+      while not ClientDataSetUsuario.Eof do
+      begin
+         form3.cbbUsuario.Items.Add(ClientDataSetUsuarioLogin.AsString);
+         ClientDataSetUsuario.Next;
+      end;
+      form3.cbbUsuario.ItemIndex := 0;
+
+      try
+         repeat
+            if (form3.ShowModal = mrYes) then
+            begin
+               ClientDataSetUsuario.Filter := 'login='+QuotedStr(UpperCase(form3.cbbUsuario.Text))+ ' and senha = '+QuotedStr(UpperCase(form3.Edit2.Text));
+               ClientDataSetUsuario.Filtered := true;
+               if (ClientDataSetUsuario.RecordCount > 0) then
+//               if (DataSourceUsuario.DataSet.Locate('login;senha',VarArrayOf([form3.Edit1.Text,form3.Edit2.Text]),[loCaseInsensitive])) then
+               begin
+                  teste := true;
+                  //usuario := form3.cbbUsuario.Text;
+                  ParametroIdUser := IntToStr(ClientDataSetUsuario.FieldByName('id').AsInteger);
+                  ParametroNomeUser := ClientDataSetUsuario.FieldByName('login').AsString;
+//                  ShowMessage('Bem vindo '+ usuario +' !!!');
+//                  MessageDlg('TEste',mtError,[mbRetry,mbYes,mbNo,mbOK],0);
+//                  Application.MessageBox('Teste','Titulo',MB_ABORTRETRYIGNORE+MB_OK+MB_ICONEXCLAMATION+mb_DefButton2);
+               end
+               else
+               begin
+                  teste := false;
+                  ShowMessage('usuario ou senha incorreto');
+               end;
+            end
+            else
+            begin
+              teste := true;
+              Application.Terminate;
+            end;
+            ClientDataSetUsuario.Filter   := '';
+            ClientDataSetUsuario.Filtered := false;
+         until (teste = true);
+      finally
+         FreeAndNil(form3);
+      end;
+   end;
+end;
+
+procedure TForm1.FormMouseEnter(Sender: TObject);
+begin
+   StatusBar1.Panels[1].Text := ParametroNomeUser;
+end;
+
+procedure TForm1.ListarUsuarioseclientesClick(Sender: TObject);
+begin
+   if (ParametroIdUser <> '') then
+   begin
+      if not ((Assigned(formCliente)) and (Assigned(formCliente.edtNomeCliente)))then
+      begin
+         formListaUsuarioCliente := TFUsuariosClientes.Create(Self);
+         formListaUsuarioCliente.DBGridListaUsuario.DataSource := DataSourceUsuario;
+         formListaUsuarioCliente.DBGridListaCliente.DataSource := DataSourceCliente;
+
+
+      end
+      else
+         formCliente.WindowState:= wsNormal;
+   end
+   else
+      Application.MessageBox('Deve primeiro cadastrar um Usuario','Cliente',MB_OK+MB_ICONEXCLAMATION+mb_DefButton1);
+end;
+
+procedure TForm1.Salvar1Click(Sender: TObject);
+begin
+   ClientDataSetUsuario.SaveToFile(ExtractFilePath(ParamStr(0))+'usuarios.xml');
+   ClientDataSetCliente.SaveToFile(ExtractFilePath(ParamStr(0))+'clientes.xml')
+end;
+
+procedure TForm1.Usuarios1Click(Sender: TObject);
+begin
+   if not ((Assigned(form2)) and (Assigned(form2.edtLogin)))then
+   begin
+      form2 := TForm2.Create(Self);
+      form2.DBGridUsuario.DataSource := DataSourceUsuario;
+   end
+   else
+      form2.WindowState:= wsNormal;
+end;
+
+procedure TForm1.CEP1Click(Sender: TObject);
+var
+   FCorreios:TFCorreios;
+begin
+   FCorreios := TFCorreios.Create(nil);
+   try
+      FCorreios.ShowModal;
+   finally
+      FreeAndNil(FCorreios);
+   end;
+end;
+
+procedure TForm1.Cliente1Click(Sender: TObject);
+begin
+   if (ParametroIdUser <> '') then
+   begin
+      if not ((Assigned(formCliente)) and (Assigned(formCliente.edtNomeCliente)))then
+      begin
+         formCliente := TFClientes.Create(Self);
+         formCliente.DBGridClientes.DataSource := DataSourceCliente;
+         formCliente.edtUsuario.Text := ParametroNomeUser;
+
+         formCliente.DBGridClientes.DataSource.DataSet.Filtered := false;
+         formCliente.DBGridClientes.DataSource.DataSet.Filter := 'usuario = '+ ParametroIdUser;
+         formCliente.DBGridClientes.DataSource.DataSet.Filtered := true;
+
+      end
+      else
+         formCliente.WindowState:= wsNormal;
+   end
+   else
+      Application.MessageBox('Deve primeiro cadastrar um Usuario','Cliente',MB_OK+MB_ICONEXCLAMATION+mb_DefButton1);
+end;
+end.

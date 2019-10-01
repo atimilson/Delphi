@@ -1,0 +1,20 @@
+unit Param;
+
+interface
+
+function geraId(const nome:string):integer;
+
+
+implementation
+
+uses Cliente, Principal;
+
+
+function geraId:integer
+begin
+   db
+end;
+
+
+
+end.

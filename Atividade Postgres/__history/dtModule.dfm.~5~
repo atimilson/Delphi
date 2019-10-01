@@ -1,0 +1,36 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 397
+  Width = 640
+  object ClientDataSet1: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 72
+    Top = 88
+  end
+  object ADPhysPgDriverLink1: TADPhysPgDriverLink
+    Left = 512
+    Top = 32
+  end
+  object ADGUIxWaitCursor1: TADGUIxWaitCursor
+    Left = 520
+    Top = 288
+  end
+  object ADConnection1: TADConnection
+    Params.Strings = (
+      'Database=DBINTESIG'
+      'User_Name=postgres'
+      'Password=itscba'
+      'DriverID=PG')
+    Connected = True
+    LoginPrompt = False
+    Left = 504
+    Top = 112
+  end
+  object ADQuery1: TADQuery
+    Connection = ADConnection1
+    Left = 512
+    Top = 200
+  end
+end

@@ -1,0 +1,86 @@
+object frmCadastroCliente: TfrmCadastroCliente
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Clientes'
+  ClientHeight = 225
+  ClientWidth = 269
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 32
+    Top = 69
+    Width = 11
+    Height = 13
+    Caption = 'ID'
+  end
+  object Label2: TLabel
+    Left = 32
+    Top = 117
+    Width = 27
+    Height = 13
+    Caption = 'Nome'
+  end
+  object Label3: TLabel
+    Left = 32
+    Top = 165
+    Width = 25
+    Height = 13
+    Caption = 'CNPJ'
+  end
+  object btnAdicionar: TButton
+    Left = 8
+    Top = 24
+    Width = 75
+    Height = 33
+    Caption = 'btnAdicionar'
+    TabOrder = 0
+    OnClick = btnAdicionarClick
+  end
+  object btnRemover: TButton
+    Left = 96
+    Top = 24
+    Width = 75
+    Height = 33
+    Caption = 'btnRemover'
+    TabOrder = 1
+    OnClick = btnRemoverClick
+  end
+  object btnContar: TButton
+    Left = 184
+    Top = 24
+    Width = 75
+    Height = 33
+    Caption = 'btnContar'
+    TabOrder = 2
+    OnClick = btnContarClick
+  end
+  object edtID: TEdit
+    Left = 32
+    Top = 88
+    Width = 121
+    Height = 21
+    TabOrder = 3
+  end
+  object edtNome: TEdit
+    Left = 32
+    Top = 136
+    Width = 229
+    Height = 21
+    TabOrder = 4
+  end
+  object edtCNPJ: TEdit
+    Left = 32
+    Top = 184
+    Width = 139
+    Height = 21
+    TabOrder = 5
+  end
+end

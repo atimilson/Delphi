@@ -1,0 +1,55 @@
+unit Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+  Tvalor<t> = class
+   Valor: T;
+   public
+   procedure teste;
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+{ Tvalor<t> }
+
+procedure Tvalor<t>.teste;
+var
+ oTexto: Tvalor<string>;
+begin
+     oTexto := Tvalor<string>.Create;
+     try
+         oTexto.Valor := 'isto é um teste';
+     finally
+         oTexto.Destroy;
+         oTexto := Nil;
+     end;
+
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+   oi : Tvalor<string>;
+begin
+   ShowMessage(oi.Valor);
+
+end;
+
+end.

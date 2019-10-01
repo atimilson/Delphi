@@ -1,0 +1,60 @@
+unit Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, dxGDIPlusClasses, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Cliente, dtModule, IniFiles;
+
+type
+  TFormPrincipal = class(TForm)
+    Image1: TImage;
+    Label1: TLabel;
+    procedure Image1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormPrincipal: TFormPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormPrincipal.FormCreate(Sender: TObject);
+var
+   arquivoIni : TIniFile;
+   mensagem : string;
+begin
+
+   ShowMessage((ExtractFilePath(ParamStr(0))+'parametros.ini'));
+   ArquivoINI := TIniFile.Create((ExtractFilePath(ParamStr(0))+'parametros.ini'));
+
+
+
+
+   Mensagem := ArquivoINI.ReadString('Exemplo', 'Mensagem', 'Erro ao ler o valor');
+   ArquivoINI.Free;
+   ShowMessage('Mensagem armazenada no arquivo INI: ' + #13 + Mensagem);
+
+
+
+
+end;
+
+procedure TFormPrincipal.Image1Click(Sender: TObject);
+begin
+   if not((Assigned(FormCliente)) and (Assigned(FormCliente.edtIdentificacao)))then
+   begin
+      FormCliente := TFormCliente.Create(Self);
+   end
+   else
+      FormCliente.WindowState:= wsNormal;
+end;
+
+end.

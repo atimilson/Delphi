@@ -1,0 +1,70 @@
+unit principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons,System.Generics.Collections;
+
+type
+  TForm1 = class(TForm)
+    SpeedButton1: TSpeedButton;
+    procedure SpeedButton1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+  TCity = class
+      Country :string;
+      Latitude: Double;
+      Longitude: Double;
+  public
+  procedure adicionar;
+  end;
+  const
+      epsilion = 0.00001;
+
+var
+  Form1: TForm1;
+  Dictionary: TDictionary<String,TCity>;
+  City, Value: TCity;
+  Key : string;
+
+implementation
+
+{$R *.dfm}
+
+{ TCity }
+
+procedure TCity.adicionar;
+begin
+   Dictionary := TDictionary<String,TCity>.Create;
+   City := TCity.Create;
+   City.Country := 'Romania';
+   City.Latitude := 47.16;
+   City.Longitude := 27.58;
+   Dictionary.Add('Iasi', City);
+
+   City := TCity.Create;
+   City.Country := 'United Kingdom';
+   City.Latitude := 51.5;
+   City.Longitude := -0.17;
+   Dictionary.Add('London', City);
+
+   City := TCity.Create;
+   City.Country := 'Argentina';
+   { Notice the wrong coordinates }
+   City.Latitude := 0;
+   City.Longitude := 0;
+   Dictionary.Add('Buenos Aires', City);
+
+   ShowMessage(IntToStr(Dictionary.Count));
+end;
+
+procedure TForm1.SpeedButton1Click(Sender: TObject);
+begin
+   City.adicionar;
+end;
+
+end.

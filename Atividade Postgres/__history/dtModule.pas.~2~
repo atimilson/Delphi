@@ -1,0 +1,40 @@
+unit dtModule;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, uADStanIntf, uADPhysManager, uADPhysPG,
+  Data.DB, Datasnap.DBClient, uADGUIxIntf, uADGUIxFormsWait, uADStanOption,
+  uADStanError, uADPhysIntf, uADStanDef, uADStanPool, uADStanAsync,
+  uADStanParam, uADDatSManager, uADDAptIntf, uADDAptManager, uADCompDataSet,
+  uADCompClient, uADCompGUIx;
+
+type
+  TDataModule1 = class(TDataModule)
+    ClientDataSet1: TClientDataSet;
+    ADPhysPgDriverLink1: TADPhysPgDriverLink;
+    ADGUIxWaitCursor1: TADGUIxWaitCursor;
+    ADConnection1: TADConnection;
+    ADQuery1: TADQuery;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DataModule1: TDataModule1;
+
+implementation
+
+{%CLASSGROUP 'System.Classes.TPersistent'}
+
+{$R *.dfm}
+
+procedure TDataModule1.DataModuleCreate(Sender: TObject);
+begin
+     ADConnection1.Connected := true;
+end;
+
+end.

@@ -1,0 +1,189 @@
+unit Cliente;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids,
+  Vcl.ExtCtrls, PAIMDIFILHO, ClassCliente, dmBanco;
+
+type
+  TFCliente = class(TFPAIMDIFILHO)
+    DBGridCliente: TDBGrid;
+    GroupBox1: TGroupBox;
+    Label9: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label10: TLabel;
+    edtRua: TEdit;
+    edtComplemento: TEdit;
+    edtBairro: TEdit;
+    edtNumero: TEdit;
+    GroupBox2: TGroupBox;
+    Label5: TLabel;
+    Label7: TLabel;
+    Label14: TLabel;
+    Label4: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label1: TLabel;
+    edtCidade: TEdit;
+    edtEmail: TEdit;
+    edtNomeCliente: TEdit;
+    RadioSexo: TRadioGroup;
+    edtRg: TEdit;
+    edtCPF: TEdit;
+    edtMNascimento: TEdit;
+    edtTelefone: TEdit;
+    btnCadastraCliente: TButton;
+    btnEditaCliente: TButton;
+    btnExcluirCliente: TButton;
+    btnCancelar: TButton;
+    edtPesquisaCliente: TEdit;
+    cbxPesquisaCliente: TComboBox;
+    btnPesquisaCliente: TButton;
+    procedure btnCadastraClienteClick(Sender: TObject);
+    function Gravar(const fclassCliente: Tcliente):boolean;
+    function Editar(const fclassCliente: Tcliente):boolean;
+    procedure limpaCampos;
+    procedure btnEditaClienteClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure DBGridClienteCellClick(Column: TColumn);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FCliente: TFCliente;
+  id_Cliente : integer;
+
+
+implementation
+
+uses
+  System.Contnrs, ParametrosConexao;
+
+{$R *.dfm}
+
+
+procedure TFCliente.btnCadastraClienteClick(Sender: TObject);
+
+var
+   classCliente : Tcliente;
+   id_cliente : integer;
+begin
+      classCliente := Tcliente.Create;
+   id_cliente := geraId+1;
+   try
+      classCliente.Id := id_cliente;
+      classCliente.Nome        := edtNomeCliente.Text;
+      classCliente.Sexo        := IntToStr(RadioSexo.ItemIndex);
+      classCliente.Rg          := edtRg.Text;
+      classCliente.Cpf         := edtCPF.Text;
+      classCliente.Email       := edtEmail.Text;
+      classCliente.Nascimento  := edtMNascimento.Text;
+      classCliente.Cidade      := edtCidade.Text;
+      classCliente.Telefone    := edtTelefone.Text;
+      classCliente.Rua         := edtRua.Text;
+      classCliente.Numero      := edtNumero.Text;
+      classCliente.Complemento := edtComplemento.Text;
+      classCliente.Bairro      := edtBairro.Text;
+      Gravar(classCliente);
+      limpaCampos;
+   finally
+      classCliente.Free;
+   end;
+
+end;
+
+procedure TFCliente.btnEditaClienteClick(Sender: TObject);
+var
+   classCliente : Tcliente;
+begin
+   classCliente := Tcliente.Create;
+       try
+      classCliente.Id          := id_cliente;
+      classCliente.Nome        := edtNomeCliente.Text;
+      classCliente.Sexo        := IntToStr(RadioSexo.ItemIndex);
+      classCliente.Rg          := edtRg.Text;
+      classCliente.Cpf         := edtCPF.Text;
+      classCliente.Email       := edtEmail.Text;
+      classCliente.Nascimento  := edtMNascimento.Text;
+      classCliente.Cidade      := edtCidade.Text;
+      classCliente.Telefone    := edtTelefone.Text;
+      classCliente.Rua         := edtRua.Text;
+      classCliente.Numero      := edtNumero.Text;
+      classCliente.Complemento := edtComplemento.Text;
+      classCliente.Bairro      := edtBairro.Text;
+      Editar(classCliente);
+      limpaCampos;
+   finally
+      classCliente.Free;
+   end;
+end;
+
+procedure TFCliente.DBGridClienteCellClick(Column: TColumn);
+begin
+  inherited;
+   id_Cliente := DBGridCliente.DataSource.DataSet.FieldByName('C_id').AsInteger;
+   edtNomeCliente.Text := DBGridCliente.DataSource.DataSet.FieldByName('C_nome').AsString;
+   RadioSexo.ItemIndex := StrToInt(DBGridCliente.DataSource.DataSet.FieldByName('C_sexo').AsString);
+   edtRg.Text := DBGridCliente.DataSource.DataSet.FieldByName('C_rg').AsString;
+   edtCPF.Text := DBGridCliente.DataSource.DataSet.FieldByName('C_cpf').AsString;
+   edtMNascimento.Text :=  DBGridCliente.DataSource.DataSet.FieldByName('C_nascimento').AsString;
+   edtCidade.Text := DBGridCliente.DataSource.DataSet.FieldByName('cidade').AsString;
+   edtTelefone.Text := DBGridCliente.DataSource.DataSet.FieldByName('C_telefone').AsString;
+   edtRua.Text := DBGridCliente.DataSource.DataSet.FieldByName('C_rua').AsString;
+   edtNumero.Text := DBGridCliente.DataSource.DataSet.FieldByName('C_numero').AsString;
+   edtComplemento.Text := DBGridCliente.DataSource.DataSet.FieldByName('C_complemento').AsString;
+   edtBairro.Text := DBGridCliente.DataSource.DataSet.FieldByName('C_bairro').AsString;
+   edtEmail.Text := DBGridCliente.DataSource.DataSet.FieldByName('C_email').AsString;
+end;
+
+function TFCliente.Editar(const fclassCliente: Tcliente): boolean;
+begin
+   if (EditarClientes(fclassCliente)) then
+      Application.MessageBox('Salvo com sucesso','Cliente',MB_OK+MB_ICONINFORMATION+mb_DefButton1)
+   else
+      Application.MessageBox('Erro ao salvar','Cliente',MB_OK+MB_ICONERROR+mb_DefButton1);
+
+end;
+
+procedure TFCliente.FormShow(Sender: TObject);
+begin
+   inherited;
+   DBGridCliente.DataSource := ListarTodosClientes;
+
+end;
+
+function TFCliente.Gravar(const fclassCliente: Tcliente): boolean;
+begin
+   if (GravarClientes(fclassCliente)) then
+      Application.MessageBox('Salvo com sucesso','Cliente',MB_OK+MB_ICONINFORMATION+mb_DefButton1)
+   else
+      Application.MessageBox('Erro ao salvar','Cliente',MB_OK+MB_ICONERROR+mb_DefButton1);
+   limpaCampos;
+
+end;
+
+
+procedure TFCliente.limpaCampos;
+begin
+   edtNomeCliente.Clear;
+   edtRg.Clear;
+   edtCPF.Clear;
+   edtMNascimento.Clear;
+   edtEmail.Clear;
+   edtCidade.Clear;
+   edtTelefone.Clear;
+   edtRua.Clear;
+   edtNumero.Clear;
+   edtComplemento.Clear;
+   edtBairro.Clear;
+end;
+
+
+
+end.

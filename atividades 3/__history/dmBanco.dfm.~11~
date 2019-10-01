@@ -1,0 +1,104 @@
+object FdmBanco: TFdmBanco
+  OldCreateOrder = False
+  Height = 337
+  Width = 431
+  object con: TADConnection
+    Params.Strings = (
+      'DriverID=ASA'
+      'User_Name=dba'
+      'Password=123'
+      'Server=BDINTESIG_ATIMILSON')
+    Connected = True
+    Left = 360
+    Top = 72
+  end
+  object cdsCliente: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DataSetProvider'
+    Left = 40
+    Top = 32
+    object cdsClienteC_id: TLargeintField
+      FieldName = 'C_id'
+      Required = True
+    end
+    object cdsClienteC_nome: TStringField
+      FieldName = 'C_nome'
+      Required = True
+      Size = 200
+    end
+    object cdsClienteC_nascimento: TStringField
+      FieldName = 'C_nascimento'
+    end
+    object cdsClienteC_sexo: TStringField
+      FieldName = 'C_sexo'
+      Size = 1
+    end
+    object cdsClienteC_RG: TStringField
+      FieldName = 'C_RG'
+      Size = 50
+    end
+    object cdsClienteC_CPF: TStringField
+      FieldName = 'C_CPF'
+      Size = 11
+    end
+    object cdsClienteC_Telefone: TStringField
+      FieldName = 'C_Telefone'
+    end
+    object cdsClienteC_Rua: TStringField
+      FieldName = 'C_Rua'
+      Size = 200
+    end
+    object cdsClienteC_numero: TStringField
+      FieldName = 'C_numero'
+      Size = 50
+    end
+    object cdsClienteC_complemento: TStringField
+      FieldName = 'C_complemento'
+      Size = 200
+    end
+    object cdsClienteC_Bairro: TStringField
+      FieldName = 'C_Bairro'
+      Size = 100
+    end
+    object cdsClientemaxTBClienteC_id: TLargeintField
+      FieldName = 'max(TBCliente.C_id)'
+      ReadOnly = True
+    end
+  end
+  object ADPhysASADriverLink1: TADPhysASADriverLink
+    Left = 360
+    Top = 16
+  end
+  object DataSourceCliente: TDataSource
+    DataSet = cdsCliente
+    Left = 120
+    Top = 32
+  end
+  object DataSetProvider: TDataSetProvider
+    DataSet = Query
+    Left = 208
+    Top = 32
+  end
+  object ADGUIxWaitCursor1: TADGUIxWaitCursor
+    Left = 360
+    Top = 128
+  end
+  object Query: TADQuery
+    Connection = con
+    SQL.Strings = (
+      'select max(C_id) from TBCliente')
+    Left = 360
+    Top = 184
+  end
+  object ADMemTable1: TADMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    Left = 360
+    Top = 248
+  end
+end

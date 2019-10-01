@@ -1,0 +1,45 @@
+unit PAIMDICHILD;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TFPAIMDICHILD = class(TForm)
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormKeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FPAIMDICHILD: TFPAIMDICHILD;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFPAIMDICHILD.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+   Action := caFree;
+end;
+
+procedure TFPAIMDICHILD.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+   if(key=VK_F12)then
+      ShowMessage(self.Name);
+end;
+
+procedure TFPAIMDICHILD.FormKeyPress(Sender: TObject; var Key: Char);
+begin
+   if(key=VK_F12)then
+      ShowMessage(self.Name);
+end;
+
+end.

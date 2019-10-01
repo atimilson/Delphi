@@ -1,0 +1,186 @@
+object Form2: TForm2
+  Left = 343
+  Top = 386
+  Caption = 'Cadastrar Usuario'
+  ClientHeight = 336
+  ClientWidth = 688
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsMDIChild
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  Visible = True
+  DesignSize = (
+    688
+    336)
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 24
+    Top = 16
+    Width = 32
+    Height = 13
+    Caption = 'Login :'
+  end
+  object Label2: TLabel
+    Left = 432
+    Top = 16
+    Width = 30
+    Height = 13
+    Caption = 'Senha'
+  end
+  object Label4: TLabel
+    Left = 24
+    Top = 72
+    Width = 26
+    Height = 13
+    Caption = 'Setor'
+  end
+  object Label5: TLabel
+    Left = 192
+    Top = 72
+    Width = 55
+    Height = 13
+    Caption = 'Permiss'#227'o :'
+  end
+  object btnFechar: TButton
+    Left = 598
+    Top = 302
+    Width = 75
+    Height = 25
+    Anchors = [akTop, akRight]
+    Caption = 'fechar'
+    TabOrder = 10
+    OnClick = btnFecharClick
+  end
+  object edtLogin: TEdit
+    Left = 24
+    Top = 35
+    Width = 385
+    Height = 21
+    TabOrder = 0
+    OnExit = edtLoginExit
+  end
+  object edtSenha: TEdit
+    Left = 432
+    Top = 35
+    Width = 177
+    Height = 21
+    TabOrder = 1
+    OnExit = edtSenhaExit
+  end
+  object cbxSetor: TComboBox
+    Left = 24
+    Top = 91
+    Width = 145
+    Height = 21
+    Style = csDropDownList
+    ItemIndex = 1
+    TabOrder = 2
+    Text = 'RH'
+    Items.Strings = (
+      'Financeiro'
+      'RH'
+      'Vendas'
+      'Juridico')
+  end
+  object cbxPermissao: TComboBox
+    Left = 192
+    Top = 91
+    Width = 137
+    Height = 21
+    Style = csDropDownList
+    ItemIndex = 0
+    TabOrder = 3
+    Text = 'Comum'
+    Items.Strings = (
+      'Comum'
+      'Coordenador'
+      'Gerente'
+      'Admin')
+  end
+  object btnCadastrar: TButton
+    Left = 24
+    Top = 136
+    Width = 75
+    Height = 26
+    Caption = 'Cadastrar'
+    TabOrder = 4
+    OnClick = btnCadastrarClick
+  end
+  object DBGridUsuario: TDBGrid
+    Left = 24
+    Top = 176
+    Width = 649
+    Height = 120
+    TabOrder = 9
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'Login'
+        Width = 218
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Senha'
+        Width = 194
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Setor'
+        Width = 119
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Permissao'
+        Width = 101
+        Visible = True
+      end>
+  end
+  object edtPesquisa: TEdit
+    Left = 415
+    Top = 139
+    Width = 177
+    Height = 21
+    TabOrder = 7
+  end
+  object btnEditar: TButton
+    Left = 120
+    Top = 136
+    Width = 75
+    Height = 26
+    Caption = 'Editar'
+    TabOrder = 5
+    OnClick = btnEditarClick
+  end
+  object btnExcliur: TButton
+    Left = 216
+    Top = 136
+    Width = 75
+    Height = 26
+    Caption = 'Excluir'
+    TabOrder = 6
+    OnClick = btnExcliurClick
+  end
+  object btnPesquisar: TButton
+    Left = 598
+    Top = 137
+    Width = 75
+    Height = 25
+    Caption = 'Pesquisar'
+    TabOrder = 8
+    OnClick = btnPesquisarClick
+  end
+end

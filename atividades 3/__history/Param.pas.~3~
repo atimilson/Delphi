@@ -1,0 +1,25 @@
+unit Param;
+
+interface
+
+function geraId(const nome:string):integer;
+
+
+implementation
+
+uses Cliente, Principal;
+var
+   cliente : TFCliente;
+   principal : TFPrincipal;
+
+function geraId:integer;
+begin
+   principal.Query.Close;
+   principal.Query.SQL.Clear;
+   principal.Query.SQL.Add('Select max(id) from TBCliente where 1=2');
+   principal.ClientDataSetCliente.Open;
+end;
+
+
+
+end.

@@ -1,0 +1,47 @@
+unit db;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, uADStanIntf, uADStanOption, uADStanError,
+  uADGUIxIntf, uADPhysIntf, uADStanDef, uADStanPool, uADStanAsync,
+  uADPhysManager, uADGUIxFormsWait, uADStanParam, uADDatSManager, uADDAptIntf,
+  uADDAptManager, uADCompDataSet, uADCompClient, uADCompGUIx, Datasnap.Provider,
+  Data.DB, uADPhysODBCBase, uADPhysASA, Datasnap.DBClient;
+
+type
+  Tdm = class(TDataModule)
+    con: TADConnection;
+    cdsCliente: TClientDataSet;
+    cdsClienteC_id: TLargeintField;
+    cdsClienteC_nome: TStringField;
+    cdsClienteC_nascimento: TSQLTimeStampField;
+    cdsClienteC_sexo: TStringField;
+    cdsClienteC_RG: TStringField;
+    cdsClienteC_CPF: TStringField;
+    cdsClienteC_Telefone: TStringField;
+    cdsClienteC_Rua: TStringField;
+    cdsClienteC_numero: TStringField;
+    cdsClienteC_complemento: TStringField;
+    cdsClienteC_Bairro: TStringField;
+    ADPhysASADriverLink1: TADPhysASADriverLink;
+    DataSourceCliente: TDataSource;
+    DataSetProvider: TDataSetProvider;
+    ADGUIxWaitCursor1: TADGUIxWaitCursor;
+    Query: TADQuery;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dm: Tdm;
+
+implementation
+
+{%CLASSGROUP 'System.Classes.TPersistent'}
+
+{$R *.dfm}
+
+end.

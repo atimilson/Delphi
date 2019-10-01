@@ -1,0 +1,101 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 337
+  Width = 431
+  object con: TADConnection
+    Params.Strings = (
+      'DriverID=ASA'
+      'User_Name=DBA'
+      'Password=123'
+      'Server=Exercicio3')
+    Connected = True
+    Left = 352
+    Top = 72
+  end
+  object ClientDataSetCliente: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DataSetProvider'
+    Left = 40
+    Top = 32
+    object ClientDataSetClienteC_id: TLargeintField
+      DisplayLabel = 'id'
+      FieldName = 'C_id'
+      Required = True
+    end
+    object ClientDataSetClienteC_nome: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'C_nome'
+      Required = True
+      Size = 200
+    end
+    object ClientDataSetClienteC_nascimento: TSQLTimeStampField
+      DisplayLabel = 'Nascimento'
+      FieldName = 'C_nascimento'
+    end
+    object ClientDataSetClienteC_sexo: TStringField
+      DisplayLabel = 'Sexo'
+      FieldName = 'C_sexo'
+      Size = 1
+    end
+    object ClientDataSetClienteC_RG: TStringField
+      DisplayLabel = 'RG'
+      FieldName = 'C_RG'
+      Size = 50
+    end
+    object ClientDataSetClienteC_CPF: TStringField
+      DisplayLabel = 'CPF'
+      FieldName = 'C_CPF'
+      Size = 11
+    end
+    object ClientDataSetClienteC_Telefone: TStringField
+      DisplayLabel = 'Telefone'
+      FieldName = 'C_Telefone'
+    end
+    object ClientDataSetClienteC_Rua: TStringField
+      DisplayLabel = 'Rua'
+      FieldName = 'C_Rua'
+      Size = 200
+    end
+    object ClientDataSetClienteC_numero: TStringField
+      DisplayLabel = 'Numero'
+      FieldName = 'C_numero'
+      Size = 50
+    end
+    object ClientDataSetClienteC_complemento: TStringField
+      DisplayLabel = 'Complemento'
+      FieldName = 'C_complemento'
+      Size = 200
+    end
+    object ClientDataSetClienteC_Bairro: TStringField
+      DisplayLabel = 'Bairro'
+      FieldName = 'C_Bairro'
+      Size = 100
+    end
+  end
+  object ADPhysASADriverLink1: TADPhysASADriverLink
+    Left = 352
+    Top = 16
+  end
+  object DataSourceCliente: TDataSource
+    DataSet = ClientDataSetCliente
+    Left = 144
+    Top = 32
+  end
+  object DataSetProvider: TDataSetProvider
+    DataSet = Query
+    Left = 216
+    Top = 32
+  end
+  object ADGUIxWaitCursor1: TADGUIxWaitCursor
+    Left = 360
+    Top = 128
+  end
+  object Query: TADQuery
+    Connection = con
+    SQL.Strings = (
+      'select * from TBCliente')
+    Left = 352
+    Top = 184
+  end
+end

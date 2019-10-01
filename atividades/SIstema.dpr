@@ -1,0 +1,20 @@
+program SIstema;
+
+uses
+  Vcl.Forms,
+  Principal in 'Principal.pas' {FPrincipal},
+  Segundo in 'Segundo.pas' {FSegundo},
+  Terceiro in 'Terceiro.pas' {FTerceiro},
+  Inss in 'Inss.pas' {FInss},
+  FormInss in 'FormInss.pas' {FormIn},
+  Vcl.Themes,
+  Vcl.Styles;
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFPrincipal, FPrincipal);
+  Application.Run;
+end.

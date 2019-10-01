@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/05/17 10:24:03.000.503,=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/05/17 10:34:50.000.887,C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\atimilson\Desktop\Projetos\atividades 3\Principal.dfm</Transaction>
+    <Transaction>2019/05/17 10:34:50.000.887,C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\atimilson\Desktop\Projetos\atividades 3\Principal.pas</Transaction>
+    <Transaction>2019/05/17 10:35:26.000.218,=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/05/17 11:29:50.000.958,C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\atimilson\Desktop\Projetos\atividades 3\Cliente.dfm</Transaction>
+    <Transaction>2019/05/17 11:29:50.000.958,C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\atimilson\Desktop\Projetos\atividades 3\Cliente.pas</Transaction>
+    <Transaction>2019/05/17 11:31:29.000.395,=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/05/17 11:42:17.000.431,=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2019/05/17 11:43:11.000.430,C:\Users\atimilson\Documents\RAD Studio\Projects\Unit2.dfm=C:\Users\atimilson\Desktop\Projetos\atividades 3\PAIMDIFILHO.dfm</Transaction>
+    <Transaction>2019/05/17 11:43:11.000.430,C:\Users\atimilson\Documents\RAD Studio\Projects\Unit2.pas=C:\Users\atimilson\Desktop\Projetos\atividades 3\PAIMDIFILHO.pas</Transaction>
+    <Transaction>2019/05/17 11:57:45.000.931,C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\atimilson\Desktop\Projetos\atividades 3\ClassCliente.pas</Transaction>
+    <Transaction>2019/05/17 14:23:15.000.581,=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/05/17 14:25:25.000.184,C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\atimilson\Desktop\Projetos\atividades 3\Param.pas</Transaction>
+    <Transaction>2019/05/17 14:45:13.000.445,=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/05/17 14:45:44.000.427,C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\atimilson\Desktop\Projetos\atividades 3\ParametrosConexao.pas</Transaction>
+    <Transaction>2019/05/17 15:33:51.000.295,=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/05/17 15:35:09.000.440,C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\atimilson\Desktop\Projetos\atividades 3\db.pas</Transaction>
+    <Transaction>2019/05/17 15:35:09.000.440,C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\atimilson\Desktop\Projetos\atividades 3\db.dfm</Transaction>
+    <Transaction>2019/05/17 15:41:13.000.878,C:\Users\atimilson\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\atimilson\Desktop\Projetos\atividades 3\Project1.dproj</Transaction>
+    <Transaction>2019/05/17 15:44:11.000.608,C:\Users\atimilson\Desktop\Projetos\atividades 3\dmBanco.dfm=C:\Users\atimilson\Desktop\Projetos\atividades 3\db.dfm</Transaction>
+    <Transaction>2019/05/17 15:44:11.000.608,C:\Users\atimilson\Desktop\Projetos\atividades 3\dmBanco.pas=C:\Users\atimilson\Desktop\Projetos\atividades 3\db.pas</Transaction>
+    <Transaction>2019/05/20 14:29:41.000.419,=C:\Users\atimilson\Desktop\Projetos\atividades 3\Unit1.pas</Transaction>
+    <Transaction>2019/05/20 14:39:46.000.417,C:\Users\atimilson\Desktop\Projetos\atividades 3\Cliente2.pas=C:\Users\atimilson\Desktop\Projetos\atividades 3\Unit1.pas</Transaction>
+    <Transaction>2019/05/20 14:39:46.000.417,C:\Users\atimilson\Desktop\Projetos\atividades 3\Cliente2.dfm=C:\Users\atimilson\Desktop\Projetos\atividades 3\Unit1.dfm</Transaction>
+    <Transaction>2019/05/21 10:52:44.000.949,=C:\Users\atimilson\Desktop\Projetos\atividades 3\Unit1.pas</Transaction>
+    <Transaction>2019/05/21 11:07:57.000.998,C:\Users\atimilson\Desktop\Projetos\atividades 3\Unit1.pas=C:\Users\atimilson\Desktop\Projetos\atividades 3\ListarClientes.pas</Transaction>
+    <Transaction>2019/05/21 11:07:57.000.998,C:\Users\atimilson\Desktop\Projetos\atividades 3\Unit1.dfm=C:\Users\atimilson\Desktop\Projetos\atividades 3\ListarClientes.dfm</Transaction>
+    <Transaction>2019/05/21 16:41:25.000.387,=C:\Users\atimilson\Desktop\Projetos\atividades 3\Unit1.pas</Transaction>
+    <Transaction>2019/05/21 16:41:45.000.659,C:\Users\atimilson\Desktop\Projetos\atividades 3\Unit1.pas=C:\Users\atimilson\Desktop\Projetos\atividades 3\ExemploColecao.pas</Transaction>
+    <Transaction>2019/05/21 16:41:45.000.659,C:\Users\atimilson\Desktop\Projetos\atividades 3\Unit1.dfm=C:\Users\atimilson\Desktop\Projetos\atividades 3\ExemploColecao.dfm</Transaction>
+    <Transaction>2019/05/21 16:49:49.000.982,=C:\Users\atimilson\Desktop\Projetos\atividades 3\Unit1.pas</Transaction>
+    <Transaction>2019/05/21 16:50:00.000.703,C:\Users\atimilson\Desktop\Projetos\atividades 3\Unit1.pas=C:\Users\atimilson\Desktop\Projetos\atividades 3\uVenda.pas</Transaction>
+    <Transaction>2019/05/21 16:57:52.000.624,=C:\Users\atimilson\Desktop\Projetos\atividades 3\Unit1.pas</Transaction>
+    <Transaction>2019/05/21 16:58:40.000.082,C:\Users\atimilson\Desktop\Projetos\atividades 3\Unit1.pas=C:\Users\atimilson\Desktop\Projetos\atividades 3\ExemploColecaoItem.pas</Transaction>
+  </Transactions>
+</BorlandProject>
