@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/07/31 15:20:01.000.204,=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/10/28 14:27:53.450,=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/10/28 14:28:40.805,C:\Users\atimilson\Documents\RAD Studio\Projects\Testes\Unit1.dfm=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2019/10/28 14:28:40.805,C:\Users\atimilson\Documents\RAD Studio\Projects\Testes\Unit1.pas=C:\Users\atimilson\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/10/28 14:28:52.462,C:\Users\atimilson\Documents\RAD Studio\Projects\Testes\Project1.dproj=C:\Users\atimilson\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
